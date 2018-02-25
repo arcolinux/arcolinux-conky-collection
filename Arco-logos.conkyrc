@@ -60,8 +60,8 @@ conky.config = {
 	gap_x = 0,									-- pixels between right or left border
 	gap_y = 0,									-- pixels between bottom or left border
 	minimum_height = 227,						-- minimum height of window
-	minimum_width = 300,						-- minimum height of window
-	maximum_width = 300,						-- maximum height of window
+	minimum_width = 350,						-- minimum height of window
+	maximum_width = 350,						-- maximum height of window
 
 	--Graphical
 
@@ -101,12 +101,12 @@ conky.config = {
 	--Windows
 
 	own_window = true,							-- create your own window to draw
-	own_window_argb_value = 0,				    -- real transparency - composite manager required 0-255
-	own_window_argb_visual = true,				-- use ARGB - composite manager required
+	own_window_argb_value = 50,			    -- real transparency - composite manager required 0-255
+	own_window_argb_visual = false,				-- use ARGB - composite manager required
 	own_window_class = 'Conky',					-- manually set the WM_CLASS name for use with xprop
 	own_window_colour = '#000000',				-- set colour if own_window_transparent no
 	own_window_hints = 'undecorated,below,above,sticky,skip_taskbar,skip_pager',  -- if own_window true - just hints - own_window_type sets it
-	own_window_transparent = false,				-- if own_window_argb_visual is true sets background opacity 0%
+	own_window_transparent = true,				-- if own_window_argb_visual is true sets background opacity 0%
 	own_window_title = 'system_conky',			-- set the name manually  - default conky "hostname"
 	own_window_type = 'desktop',				-- if own_window true options are: normal/override/dock/desktop/panel
 
@@ -134,8 +134,8 @@ conky.config = {
 
 conky.text = [[
 #${image $HOME/.config/conky/images/arcolinux.png -s 300x300}
-#${image $HOME/.config/conky/images/arcolinux-white-300x300.png -s 300x300}
-#${image $HOME/.config/conky/images/arcolinux-text.png -s 728x127}
-#${image $HOME/.config/conky/images/arcolinux-text-cp.png -s 542x211}
-${image $HOME/.config/conky/images/arcolinux-compact-300x227.png -s 300x227}
+${image $HOME/.config/conky/images/arcolinux-white-300x300.png -s 300x300}
+#${image $HOME/.config/conky/images/arcolinux-one-liner.png -s 347x70}
+#${image $HOME/.config/conky/images/arcolinux-text-cp-200x76.png -s 200x76}
+#${image $HOME/.config/conky/images/arcolinux-two-liner-cp.png -s 224x180}
 ]];
