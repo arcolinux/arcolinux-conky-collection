@@ -171,6 +171,6 @@ ${offset 30}${color1}${top_mem name 6}${alignr}${alignr}${color6}${top_mem mem 6
 ${offset 0}${color1}${color1}Memory used${alignr}${color6}${mem}
 ${offset 0}${color1}Total Memory${alignr}${color6}${memmax}
 ${color1}${hr 2}
-${alignc}A R C H M E R G E   N E M E S I S
+${alignc}A R C O L I N U X   N E M E S I S
 ${color1}${hr 2}
 ]]
