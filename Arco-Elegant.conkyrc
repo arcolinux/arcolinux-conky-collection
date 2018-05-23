@@ -8,7 +8,14 @@
 # Documentation : http://erikdubois.be/
 #======================================================================================
 
-#install the font xirod.ttf to have nice titles
+#======================================================================================
+# old conky configuration
+#======================================================================================
+
+#install the font xirod.ttf to have nice titles - included in folder fonts
+#run sensors-detect if needed
+#you need to have 8 cores or else it will never run.
+#delete the lines if you have only 4 or 2 cores. 
 
 update_interval 2
 total_run_times 0
@@ -42,8 +49,8 @@ own_window_argb_visual yes
 own_window_argb_value 150
 own_window_transparent = true
 
-alignment top_right
-gap_y 20
+alignment middle_left
+gap_y 0
 gap_x 10
 border_inner_margin 8
 draw_outline no
