@@ -50,8 +50,8 @@ own_window_argb_value 150
 own_window_transparent = true
 
 alignment middle_left
-gap_y 0
 gap_x 10
+gap_y 20
 border_inner_margin 8
 draw_outline no
 draw_borders no
@@ -144,14 +144,3 @@ ${color5}${font Droid Sans:bold:size=8}RAM$font$color
 ${color5}${font Droid Sans:bold:size=8}SWAP$font$color
        $swap / $swapmax $alignr $swapperc %
        ${color6}${swapbar 10,330 /}$color
-
-# HDD
-#${font xirod:Bold:size=11}${color1}DISKS ${hr 2}$font$color
-#${font Droid Sans:bold:size=8}${color5}/dev/sda   		${color6}Read:$diskio_read	Write:$diskio_write${color}   $alignr ${execi 300 sudo hddtemp /dev/sda | cut -c34-35}°C$color
-
-#${font Droid Sans:bold:size=8}${color5}ROOT $font$font$alignr ${fs_type /}$font
-       #${color5}${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /} %$color
-       #${color6}${fs_bar 10,330 /}$color
-#${font Droid Sans:bold:size=8}${color5}HOME $font$font$alignr ${fs_type /home}$font
-       #${color5}${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /home} %$color
-       #${color6}${fs_bar 10,330 /home}$color

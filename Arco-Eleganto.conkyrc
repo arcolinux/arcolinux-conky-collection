@@ -204,5 +204,4 @@ ${color5}${font Droid Sans:bold:size=8}RAM$font$color
 ${color5}${font Droid Sans:bold:size=8}SWAP$font$color
        $swap / $swapmax $alignr $swapperc %
        ${color6}${swapbar 10,330 /}$color
-
 ]]
