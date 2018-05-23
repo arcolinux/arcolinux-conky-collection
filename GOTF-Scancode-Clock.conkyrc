@@ -1,12 +1,12 @@
 --[[
 #=====================================================================================
 #                               arcolinux
-# Date    : 23/05/2018
+# Date    : package-date
 # Author  : Ported from ~WhiteBaron http://white-baron.deviantart.com/art/Paskowy-175408620
 #         : Website: http://www.meetgautham.co.cc
 # Source  : http://gapotheflow.deviantart.com/art/Paskowy-Conky-Port-183723600
 # Editor  : Erik Dubois
-# Version : v6.8.1
+# Version : package-version
 # License : Distributed under the terms of GNU GPL version 2 or later
 # Documentation : http://erikdubois.be/
 #======================================================================================

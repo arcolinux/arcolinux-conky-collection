@@ -1,12 +1,12 @@
 --[[
 #=====================================================================================
 #                               arcolinux
-# Date    : 23/05/2018
+# Date    : package-date
 # Source  : BunsenLabs smacz betatester
 # converted to conky 1.10 syntax for arcolinux by: postmaster and Erik Dubois
 # original config borrowed from BunsenLabs with love
 # Editor  : Erik Dubois at http://www.erikdubois.be
-# Version : v6.8.1
+# Version : package-version
 # License : Distributed under the terms of GNU GPL version 2 or later
 # Documentation : http://erikdubois.be
 #======================================================================================
