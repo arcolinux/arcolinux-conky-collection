@@ -83,10 +83,8 @@ $sysname $kernel $alignr $machine
 #NVidia Optimus: $alignr${execi 60 cat /proc/acpi/bbswitch | awk '{print $2}'}
 #AC Status $alignr$acpiacadapter ${battery BAT1}
 #AC Status $alignr${battery BAT0}
-Battery Temp $alignr$acpitemp°C
+#Battery Temp $alignr$acpitemp°C
 System Temp $alignr${exec sensors | grep Core\ 3 | awk '{print $3}'}
-#Updates $alignr Pacman: ${execp cat /tmp/off.updates | wc -l}
-#$alignr AUR: ${execp cat /tmp/aur.updates | wc -l}
 
 # CPU
 ${font xirod:Bold:size=10}${color1}CPU ${hr 2}$font$color
