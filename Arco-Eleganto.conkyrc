@@ -156,14 +156,14 @@ System Temp $alignr${exec sensors | grep Core\ 3 | awk '{print $3}'}
 # CPU
 ${font xirod:Bold:size=10}${color1}CPU ${hr 2}$font$color
 
-${font}Core 0   ${color1}${execi 30 sensors | grep 'Core 0:' | cut -c18-19}°C${color}  @  ${cpu cpu1} % $alignr ${color6}${cpubar cpu1}${color}
-${font}Core 1   ${color1}${execi 30 sensors | grep 'Core 1:' | cut -c18-19}°C${color}  @  ${cpu cpu2} % $alignr ${color6}${cpubar cpu2}${color}
-${font}Core 2   ${color1}${execi 30 sensors | grep 'Core 2:' | cut -c18-19}°C${color}  @  ${cpu cpu3} % $alignr ${color6}${cpubar cpu3}${color}
-${font}Core 3   ${color1}${execi 30 sensors | grep 'Core 3:' | cut -c18-19}°C${color}  @  ${cpu cpu4} % $alignr ${color6}${cpubar cpu4}${color}
-${font}Core 4   ${color1}${execi 30 sensors | grep 'Core 0:' | cut -c18-19}°C${color}  @  ${cpu cpu5} % $alignr ${color6}${cpubar cpu5}${color}
-${font}Core 5   ${color1}${execi 30 sensors | grep 'Core 1:' | cut -c18-19}°C${color}  @  ${cpu cpu6} % $alignr ${color6}${cpubar cpu6}${color}
-${font}Core 6   ${color1}${execi 30 sensors | grep 'Core 2:' | cut -c18-19}°C${color}  @  ${cpu cpu7} % $alignr ${color6}${cpubar cpu7}${color}
-${font}Core 7   ${color1}${execi 30 sensors | grep 'Core 3:' | cut -c18-19}°C${color}  @  ${cpu cpu8} % $alignr ${color6}${cpubar cpu8}${color}
+${font}Core 0   ${color1}${execi 30 sensors | grep 'Core 0:' | cut -c17-18}°C${color}  @  ${cpu cpu1} % $alignr ${color6}${cpubar cpu1}${color}
+${font}Core 1   ${color1}${execi 30 sensors | grep 'Core 1:' | cut -c17-18}°C${color}  @  ${cpu cpu2} % $alignr ${color6}${cpubar cpu2}${color}
+${font}Core 2   ${color1}${execi 30 sensors | grep 'Core 2:' | cut -c17-18}°C${color}  @  ${cpu cpu3} % $alignr ${color6}${cpubar cpu3}${color}
+${font}Core 3   ${color1}${execi 30 sensors | grep 'Core 3:' | cut -c17-18}°C${color}  @  ${cpu cpu4} % $alignr ${color6}${cpubar cpu4}${color}
+${font}Core 4   ${color1}${execi 30 sensors | grep 'Core 0:' | cut -c17-18}°C${color}  @  ${cpu cpu5} % $alignr ${color6}${cpubar cpu5}${color}
+${font}Core 5   ${color1}${execi 30 sensors | grep 'Core 1:' | cut -c17-18}°C${color}  @  ${cpu cpu6} % $alignr ${color6}${cpubar cpu6}${color}
+${font}Core 6   ${color1}${execi 30 sensors | grep 'Core 2:' | cut -c17-18}°C${color}  @  ${cpu cpu7} % $alignr ${color6}${cpubar cpu7}${color}
+${font}Core 7   ${color1}${execi 30 sensors | grep 'Core 3:' | cut -c17-18}°C${color}  @  ${cpu cpu8} % $alignr ${color6}${cpubar cpu8}${color}
 
 Core 0${alignr}Core1
 ${cpugraph cpu1 25,170 000000 757575} ${alignr}${cpugraph cpu2 25,170 000000 757575}
