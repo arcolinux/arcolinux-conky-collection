@@ -134,8 +134,6 @@ conky.config = {
 
 
 	--Lua
-	--lua_load = '$HOME/.config/conky/lua/draw-bg.lua',
-	--lua_draw_hook_pre = 'draw_bg 15 0 0 0 0 0x656667 0.35',
 
 };
 
