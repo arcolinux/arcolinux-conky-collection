@@ -135,12 +135,12 @@ template0="~/.config/conky/images/weather-icons/64px-orange-red",
 --  API Key
 --  To get API Key, first you have to sign up here https://openweathermap.org/appid
 -------------------------------------
-template6="637d149a43ee9c94d3a683911986c2f7",
+template6="752d68e3d4facec4f3f177745fdaeace",
 
 
 -------------------------------------
 --  City ID
---  Find your City ID here http://openweathermap.org/help/city_list.txt
+--  Find your City ID here https://openweathermap.org/city
 -------------------------------------
 template7="2803138",
 
