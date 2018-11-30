@@ -4,6 +4,7 @@
 # Date    : package-date
 # Author  : Erik Dubois
 # Source  : Aureola - https://github.com/erikdubois/Aureola
+# Source  : conky-sys-info V5 by +WillemO 25-june-16
 # Version : package-version
 # License : Distributed under the terms of GNU GPL version 2 or later
 #=====================================================================================
@@ -84,7 +85,7 @@ conky.config = {
 	
 	extra_newline = false,
 	format_human_readable = true,
-	font = 'ubuntu:size=11:oblique',
+	font = 'ubuntu:size=11',
 	max_text_width = 0,
 	max_user_text = 16384,
 	override_utf8_locale = true,
@@ -127,7 +128,7 @@ conky.config = {
 
 
 conky.text = [[
-${voffset 5}${color6}${font purisa:size=16:bold}${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4" " $5'}}${font}
+${voffset 5}${color6}${font ubuntu:size=16:bold}${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4" " $5'}}${font}
 #
 ${voffset 10}${color1}${font ubuntu:size=11:regular}Base :${font}${color6} $distribution $sysname $kernel
 #${voffset 5}${color1}${font ubuntu:size=11:regular}${font ubuntu:size=11:regular}${execi 10000 lsb_release -d | cut -f 2| tr "[:upper:]" "[:upper:]"} ${font}${color6}${alignr}$kernel
