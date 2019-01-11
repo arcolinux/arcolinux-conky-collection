@@ -1,6 +1,6 @@
 --[[
 #=====================================================================================
-#                               
+#
 # Date    : package-date
 # Author  : http://zagortenay333.deviantart.com/art/Conky-Vision-395777503
 # Github  : https://github.com/zagortenay333/conky-Vision
@@ -14,11 +14,11 @@
 #
 # For commands in conky.text section:
 # http://conky.sourceforge.net/variables.html
-# 
+#
 # A PDF with all variables is provided
 #=====================================================================================
 # FONTS
-# To avoid copyright infringements you will have to download 
+# To avoid copyright infringements you will have to download
 # and install the fonts yourself sometimes.
 #=====================================================================================
 # GENERAL INFO ABOUT FONTS
@@ -149,14 +149,14 @@ ${execi 300 l=${template9}; l=${l%%_*}; curl -s "api.openweathermap.org/data/2.5
 \
 \
 \
-${font Poiret One:weight=Light:size=96}${color0}\
+${font DroidSansMono:weight=Light:size=96}${color0}\
 ${alignc}${time %H:%M}\
 ${font}${color}
 \
 \
 \
 \
-${font Poiret One:weight=Light:size=28}${color1}\
+${font DroidSansMono:weight=Light:size=28}${color1}\
 ${voffset 30}\
 ${alignc}${execi 300 LANG=${template9} LC_TIME=${template9} date +"%A, %B %d"}\
 ${font}${color}
@@ -164,7 +164,7 @@ ${font}${color}
 \
 \
 \
-${font Poiret One:size=12}${color2}\
+${font DroidSansMono:size=12}${color2}\
 ${voffset 36}\
 ${goto 60}${execi 300 jq .main.temp ~/.cache/weather.json | awk '{print int($1+0.5)}' # round num}°\
 ${font}${color}\
@@ -172,7 +172,7 @@ ${font}${color}\
 \
 \
 \
-${font Poiret One:size=12}${color3}\
+${font DroidSansMono:size=12}${color3}\
 ${goto 164}${execi 300 jq .list[1].temp.max ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°\
 ${goto 272}${execi 300 jq .list[2].temp.max ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°\
 ${goto 378}${execi 300 jq .list[3].temp.max ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°\
@@ -182,7 +182,7 @@ ${font}${color}\
 \
 \
 \
-${font Poiret One:size=12}${color4}\
+${font DroidSansMono:size=12}${color4}\
 ${voffset 52}\
 ${goto 218}${execi 300 jq .list[1].temp.min ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°\
 ${goto 324}${execi 300 jq .list[2].temp.min ~/.cache/forecast.json | awk '{print int($1+0.5)}' # round num}°\
@@ -193,7 +193,7 @@ ${font}${color}
 \
 \
 \
-${font Poiret One:size=14}${color5}\
+${font DroidSansMono:size=14}${color5}\
 ${voffset 20}\
 ${goto 76}${execi 300 LANG=${template9} LC_TIME=${template9} date +%^a}\
 ${goto 182}${execi 300 LANG=${template9} LC_TIME=${template9} date -d +1day +%^a}\

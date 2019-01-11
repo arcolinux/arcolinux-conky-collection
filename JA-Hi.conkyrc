@@ -70,8 +70,8 @@ conky.config = {
 	gap_x = 20,									-- pixels between right or left border
 	gap_y = 50,									-- pixels between bottom or left border
 	minimum_height = 200,						-- minimum height of window
-	minimum_width = 350,						-- minimum height of window
-	maximum_width = 350,						-- maximum height of window
+	minimum_width = 500,						-- minimum height of window
+	maximum_width = 500,						-- maximum height of window
 
 	--Graphical
 
@@ -96,7 +96,7 @@ conky.config = {
 
 	extra_newline = false,						-- extra newline at the end - for asesome's wiboxes
 	format_human_readable = true,				-- KiB, MiB rather then number of bytes
-	font = 'SourceSansPro-ExtraLight:size=11:oblique',  -- font for complete conky unless in code defined
+	font = 'Desyrel_Regular:size=11',  -- font for complete conky unless in code defined
 	max_text_width = 0,							-- 0 will make sure line does not get broken if width too smal
 	max_user_text = 16384,						-- max text in conky default 16384
 	override_utf8_locale = true,				-- force UTF8 requires xft
@@ -143,7 +143,9 @@ conky.config = {
 };
 
 conky.text = [[
-${font Grand Hotel:size=35}Hi, its's ${time %I:%M}${font Grand Hotel:size=20}${time %p}
-${font Grand Hotel:size=35}Today is ${time %A}
+#${font Grand Hotel:size=35}Hi, its's ${time %I:%M}${font Grand Hotel:size=20}${time %p}
+#${font Grand Hotel:size=35}Today is ${time %A}
+${font Desyrel:size=35}Hi, its's ${time %I:%M}${time %p}
+Today is ${time %A}
 The ${time %d} of ${time %B}
 ]];

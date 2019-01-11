@@ -22,7 +22,7 @@ own_window_colour 000000
 border_inner_margin 0
 border_outer_margin 0
 
-minimum_size 300 600
+minimum_size 300 700
 alignment top_left
 gap_x 10
 gap_y 40
@@ -34,7 +34,8 @@ draw_borders no
 draw_graph_borders no
 
 use_xft yes
-xftfont Eurostile:Bold:size=10
+#xftfont Eurostile:Bold:size=10
+xftfont DroidSansMono:size=9
 xftalpha 0.5
 
 color1 EEEEEE
@@ -48,25 +49,29 @@ ${voffset 26}${goto 16}${color2}${time %H:%M}
 ${voffset -24}${goto 70}${color2}${time %d %B}
 ${voffset -5}${goto 62}${color2}${cpubar cpu0 1,80}
 ${voffset -6}${goto 72}${color2}${time %A}
-${voffset 70}${goto 75}${color2}Cpu usage
+#
+${voffset 66}${goto 75}${color2}Cpu usage
 ${voffset -4}${goto 62}${color2}${cpubar cpu0 1,80}
 ${voffset -6}${goto 75}${color2}${cpu cpu1} %    ${cpu cpu2} %
-${voffset 68}${goto 75}${color2}Freq info
+#
+${voffset 66}${goto 75}${color2}Freq info
 ${voffset -5}${goto 62}${color2}${cpubar cpu0 1,80}
 ${voffset -6}${goto 70}${color2}${freq cpu} Mhz
-${voffset 70}${goto 75}${color2}Upspeed
+#
+${voffset 66}${goto 75}${color2}Upspeed
 ${voffset -5}${goto 62}${color2}${cpubar cpu0 1,100}
 ${voffset -6}${goto 75}${color2}${upspeedf enp0s31f6} kb/s
 #${voffset -6}${goto 75}${color2}${upspeedf wlan0} kb/s
-${voffset 69}${goto 75}${color2}Downspeed
+#
+${voffset 66}${goto 75}${color2}Downspeed
 ${voffset -6}${goto 62}${color2}${cpubar cpu0 1,100}
 ${voffset -5}${goto 75}${color2}${downspeedf enp0s31f6} kb/s
 #${voffset -5}${goto 75}${color2}${downspeedf wlan0} kb/s
-${voffset 69}${goto 72}${color2}Wifi Signal
+#
+${voffset 64}${goto 72}${color2}Wifi Signal
 ${voffset -5}${goto 62}${color2}${cpubar cpu0 1,80}
 ${voffset -4}${goto 90}${color2}${wireless_link_qual_perc wlan0} %
+#
 ${voffset 66}${goto 70}${color2}Homedir
 ${voffset -5}${goto 60}${color2}${cpubar cpu0 1,70}
 ${voffset -2}${goto 80}${color2}${fs_used_perc} %
-
-
