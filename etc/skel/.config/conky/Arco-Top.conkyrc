@@ -141,7 +141,7 @@ ${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2'}}  ${execi 6000 lsb_r
 ${else}${if_match ${fs_used_perc /} < 90} ${fs_used_perc /}\
 ${else}${color9}${fs_used_perc /}${color}${endif}${endif}% \
 of ${fs_size /}\
-${goto 280}/Home ${if_match ${fs_used_perc /home} < 10}  ${fs_used_perc /home}\
+${goto 290}/Home ${if_match ${fs_used_perc /home} < 10}  ${fs_used_perc /home}\
 ${else}${if_match ${fs_used_perc /home} < 90} ${fs_used_perc /home}\
 ${else}${color9}${fs_used_perc /home}${color}${endif}${endif}% \
 of ${fs_size /home}\
@@ -152,6 +152,6 @@ ${goto 560}RAM ${if_match ${memperc} < 10}  ${memperc}\
 ${else}${if_match ${memperc} < 100} ${memperc}\
 ${else}${color9}${memperc}${color}${endif}${endif}% of ${memmax}\
 ${goto 690}Read ${diskio_read}\
-${goto 760}Write ${diskio_write}\
+${goto 765}Write ${diskio_write}\
 ${alignr}${uptime_short} \
 ]];
