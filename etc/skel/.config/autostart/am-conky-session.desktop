@@ -5,7 +5,6 @@ Type=Application
 Name=am-conky-session
 Comment=
 Exec=am-conky-session
-OnlyShowIn=XFCE;
 StartupNotify=false
 Terminal=false
 Hidden=true
