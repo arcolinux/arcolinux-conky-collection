@@ -35,8 +35,8 @@ sh am-conky-session &
 autostart_off()
 {
 
-if [ -e /home/$USER/.config/autostart/conky.desktop ]; then
-    sed -i -r s/Hidden=.*/Hidden=true/ /home/$USER/.config/autostart/conky.desktop
+if [ -e /home/$USER/.config/autostart/am-conky-session.desktop ]; then
+    sed -i -r s/Hidden=.*/Hidden=true/ /home/$USER/.config/autostart/am-conky-session.desktop
 fi
 
 }
@@ -44,8 +44,8 @@ fi
 autostart_on()
 {
 
-if [ -e /home/$USER/.config/autostart/conky.desktop ]; then
-    sed -i -r s/Hidden=.*/Hidden=false/ /home/$USER/.config/autostart/conky.desktop
+if [ -e /home/$USER/.config/autostart/am-conky-session.desktop ]; then
+    sed -i -r s/Hidden=.*/Hidden=false/ /home/$USER/.config/autostart/am-conky-session.desktop
 fi
 
 }
