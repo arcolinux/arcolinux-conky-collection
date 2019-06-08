@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Conky Toggle
+Comment=Desktop system monitor on/off
+Icon=conky
+Categories=Utility;System;
+Exec=conky-toggle.sh
+Terminal=false
+NoDisplay=False
