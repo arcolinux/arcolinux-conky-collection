@@ -137,6 +137,7 @@ conky.config = {
 
 conky.text = [[
 ${image ~/.config/conky/images/arcolinux-white-100x100.png -p 170,0 -s 50x50}
+
 ${color1}${font SourceSansPro-ExtraLight:size=18:weight:bold}${color2}${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4" " $5'}}
 ${color1}${hr 2}
 ${voffset -10}${color1}${font SourceSansPro-ExtraLight:size=10:weight:bold:italic}${color6}$sysname $kernel ${alignr}${execi 6000 lsb_release -a | grep 'Release'|awk {'print $2""$3""$4""$5'}}${color}
