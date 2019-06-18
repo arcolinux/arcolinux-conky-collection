@@ -123,7 +123,7 @@ ${voffset 4}${font StyleBats:Bold:size=14}X${font} Dowload: ${alignr}${totaldown
 ${else}${if_existing /proc/net/route wlp2s0}${alignc 0}${font Deja sans:size=12}Wireless
 ${font}SSID: ${wireless_essid wlp2s0}
 Signal: ${wireless_link_qual_perc wlp2s0}% ${alignr}${wireless_link_bar 8,60 wlp2s0}
-${font StyleBats:Bold:size=14}V${font} Up: ${upspeed wlp2s0}${alignr}${upspeedgraph wlp2s0 8,60 black black}
+${voffset 8}${font StyleBats:Bold:size=14}V${font} Up: ${upspeed wlp2s0}${alignr}${upspeedgraph wlp2s0 8,60 black black}
 ${voffset 4}${font StyleBats:Bold:size=14}T${font} Down: ${downspeed wlp2s0}${alignr}${downspeedgraph wlp2s0 8,60 black black}
 ${voffset 4}${font StyleBats:Bold:size=14}N${font} Upload: ${alignr}${totalup wlp2s0}
 ${voffset 4}${font StyleBats:Bold:size=14}X${font} Download: ${alignr}${totaldown wlp2s0}
