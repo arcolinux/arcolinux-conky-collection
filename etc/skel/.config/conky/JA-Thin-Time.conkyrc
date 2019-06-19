@@ -111,7 +111,7 @@ conky.config = {
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 	own_window_transparent = false,
 	own_window_title = 'system_conky',
-	own_window_type = 'normal',-- # options are: normal/override/dock/desktop/panel
+	own_window_type = 'desktop',-- # options are: normal/override/dock/desktop/panel 
 	
 
 	--Colours
@@ -136,5 +136,5 @@ conky.config = {
 
 
 conky.text = [[
-${offset 0}${color2}${font Helvetica Neue LT Com:size=80}${lua Hour}${color1}${lua Minute}
+${offset 0}${color2}${font Aliquam:size=80}${lua Hour}${color1}${lua Minute}
 ]]
