@@ -141,13 +141,13 @@ conky.config = {
 };
 
 conky.text = [[
-#${color1}${font Inked out:size=18:regular}       ArcoLinux${font}
-#${color2}${font Inked out:size=16:regular}    ArcoLinux ${font}
-${color1}${font Bootcamp:size=100:regular}ArcoLinux   ${font}
-#${color1}${font Quantify:size=80:regular}   ArcoLinux${font}
-#${color1}${font Stya:size=55:regular}         ArcoLinux  ${font}
-#${color1}${font Space Age:size=55:regular}  ArcoLinux  ${font}
-#${color1}${font Star Jedi Outline:size=55:regular}   ArcoLinux ${font}
-#${color1}${font StarJedi Special Edition:size=55:regular}   ArcoLinux ${font}
-#${color1}${font StarJedi:size=55:regular}   ArcoLinux ${font}
+#${color1}${font Inked out:size=18:regular}${alignc}       ArcoLinux${font}
+#${color2}${font Inked out:size=16:regular}${alignc}    ArcoLinux ${font}
+${color1}${font Bootcamp:size=100:regular}${alignc}ArcoLinux${font}
+#${color1}${font Quantify:size=80:regular}${alignc}   ArcoLinux${font}
+#${color1}${font Stya:size=55:regular}${alignc}         ArcoLinux  ${font}
+#${color1}${font Space Age:size=55:regular}${alignc}  ArcoLinux  ${font}
+#${color1}${font Star Jedi Outline:size=55:regular}${alignc}   ArcoLinux ${font}
+#${color1}${font StarJedi Special Edition:size=55:regular}${alignc}   ArcoLinux ${font}
+#${color1}${font StarJedi:size=55:regular}${alignc}   ArcoLinux ${font}
 ]];
