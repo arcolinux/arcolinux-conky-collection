@@ -57,14 +57,14 @@ draw_outline no
 draw_borders no
 
 minimum_size 350 520
-maximum_width 350
-maximum_height 520
+maximum_width 300
+maximum_height 300
 
-default_bar_size 200 8
+default_bar_size 170 8
 draw_bar_borders no
 
 default_color DEDEDE
-color1 F68516
+color1 EEEEEE
 color2 8C8C8C
 color3 ABABAB
 color4 C9C9C9
@@ -80,7 +80,8 @@ color6 757575
 #color6 757575
 
 TEXT
-${font xirod:Bold:size=18}${color1}${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4" " $5'}} $font${execi 6000 lsb_release -a | grep 'Release'|awk {'print $2""$3""$4""$5'}}${color}
+${font xirod:Bold:size=12}${color1}${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4" " $5'}} 
+$font${execi 6000 lsb_release -a | grep 'Release'|awk {'print $2""$3""$4""$5'}}${color}
 # SYS
 
 ${color5}System Uptime $alignr $uptime${color5}
@@ -106,13 +107,13 @@ ${font}Core 6   ${color1}${execi 30 sensors | grep 'Core 2:' | cut -c17-18}°C${
 ${font}Core 7   ${color1}${execi 30 sensors | grep 'Core 3:' | cut -c17-18}°C${color}  @  ${cpu cpu8} % $alignr ${color6}${cpubar cpu8}${color}
 
 Core 0${alignr}Core1
-${cpugraph cpu1 25,170 000000 757575} ${alignr}${cpugraph cpu2 25,170 000000 757575}
+${cpugraph cpu1 25,150 000000 757575} ${alignr}${cpugraph cpu2 25,150 000000 757575}
 Core 2${alignr}Core 3
-${cpugraph cpu3 25,170 000000 757575} ${alignr}${cpugraph cpu4 25,170 000000 757575}
+${cpugraph cpu3 25,150 000000 757575} ${alignr}${cpugraph cpu4 25,150 000000 757575}
 Core 4${alignr}Core 5
-${cpugraph cpu4 25,170 000000 757575} ${alignr}${cpugraph cpu5 25,170 000000 757575}
+${cpugraph cpu4 25,150 000000 757575} ${alignr}${cpugraph cpu5 25,150 000000 757575}
 Core 6${alignr}Core 7
-${cpugraph cpu6 25,170 000000 757575} ${alignr}${cpugraph cpu7 25,170 000000 757575}
+${cpugraph cpu6 25,150 000000 757575} ${alignr}${cpugraph cpu7 25,150 000000 757575}
 
 # LOAD
 
@@ -140,7 +141,7 @@ ${font xirod:Bold:size=10}${color1}MEMORY ${hr 2}$color$font
 
 ${color5}${font Droid Sans:bold:size=8}RAM$font$color
        $mem / $memmax $alignr $memperc %
-       ${color6}${membar 10,330 /}$color
+       ${color6}${membar 10,280 /}$color
 ${color5}${font Droid Sans:bold:size=8}SWAP$font$color
        $swap / $swapmax $alignr $swapperc %
-       ${color6}${swapbar 10,330 /}$color
+       ${color6}${swapbar 10,280 /}$color
