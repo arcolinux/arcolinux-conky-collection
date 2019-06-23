@@ -61,11 +61,11 @@ conky.config = {
 	default_color = 'white',
 	default_shade_color = 'gray',
 	default_outline_color = 'black',
-	alignment = 'top_right',
+	alignment = 'middle_right',
 	--Arch Duoscreen
 	--gap_x = -1910,
-	gap_x = 5,
-	gap_y = 0,
+	gap_x = 0,
+	gap_y = 30,
 
 	-- Misc Console #
     out_to_console = false,
@@ -78,7 +78,7 @@ conky.config = {
 	override_utf8_locale = true,
 	use_spacer = 'right',
 	maximum_width = 400,
-    minimum_height = 1200,
+    minimum_height = 800,
 	uppercase = true,
 
 
@@ -166,6 +166,6 @@ ${alignr}${offset -42}< ${downspeed enp0s31f6} kb/s > down ─┘
 ${alignr}${offset -2}│           
 ${alignr}${offset -68}< ${downspeedgraph enp0s31f6 12,165 136311 11B014} > ─┘
 
-${alignc}wan < ${execi 60 wget -O - -q icanhazip.com} >
-${alignc}     lan < ${addr enp0s31f6} >      
+#${alignc}wan < ${execi 60 wget -O - -q icanhazip.com} >
+${alignr}     lan < ${addr enp0s31f6} >      
 ]];

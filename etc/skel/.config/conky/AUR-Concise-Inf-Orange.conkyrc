@@ -2,13 +2,11 @@
 #=====================================================================================
 #                               arcolinux
 # Date    : package-date
-# Source  : BunsenLabs ellipses by damo <damo@bunsenlabs.org> April 2015
-# converted to conky 1.10 syntax for arcolinux by: postmaster and Erik Dubois
-# original config borrowed from BunsenLabs with love
-# Editor  : Erik Dubois at http://www.erikdubois.be
+# Source  : Addy http://addy-dclxvi.deviantart.com/ https://github.com/addy-dclxvi
+# Editor  : Erik Dubois
 # Version : package-version
 # License : Distributed under the terms of GNU GPL version 2 or later
-# Documentation : http://erikdubois.be
+# Documentation : http://erikdubois.be/
 #======================================================================================
 # CONKY
 # For commands in conky.config section:
@@ -18,7 +16,7 @@
 # http://conky.sourceforge.net/variables.html
 #
 # A PDF with all variables is provided
-#======================================================================================
+#=====================================================================================
 # FONTS
 # To avoid copyright infringements you will have to download
 # and install the fonts yourself sometimes.
@@ -34,13 +32,11 @@
 # Enjoy
 #=====================================================================================
 # FONTS FOR THIS CONKY
-# no extra font(s) needed
-#======================================================================================
-# LUA
-# You need not only install conky but also a package that supports lua on your computer
-# Depending on your HARDWARE you should choose wisely in the AUR
-# My hardware has an NVIDIA I will choose "conky-lua-nv" from AUR.
-#======================================================================================
+# We are free to use the font.
+# Install Paskowy.ttf.
+# It is located in the ~/.config/conky/fonts folder
+# Reboot to load the new font and/or restart the conky.
+#=====================================================================================
 
 ]]
 
@@ -63,15 +59,15 @@ conky.config = {
 
 	--Placement
 
-	alignment = 'top_right',		            -- top_left,top_middle,top_right,bottom_left,bottom_middle,bottom_right,
+	alignment = 'top_right',  					-- top_left,top_middle,top_right,bottom_left,bottom_middle,bottom_right,
 												-- middle_left,middle_middle,middle_right,none
 	--Arch Duoscreen
 	--gap_x = -1910,
-	gap_x = 30,									-- pixels between right or left border
+	gap_x = 20,									-- pixels between right or left border
 	gap_y = 50,									-- pixels between bottom or left border
-	minimum_height = 100,						-- minimum height of window
-	minimum_width = 208,						-- minimum height of window
-	maximum_width = 208,						-- maximum height of window
+	minimum_height = 60,						-- minimum height of window
+	minimum_width = 300,						-- minimum height of window
+	maximum_width = 300,						-- maximum height of window
 
 	--Graphical
 
@@ -96,7 +92,7 @@ conky.config = {
 
 	extra_newline = false,						-- extra newline at the end - for asesome's wiboxes
 	format_human_readable = true,				-- KiB, MiB rather then number of bytes
-	font = 'Droid Sans:bold:size=14',  			-- font for complete conky unless in code defined
+	font = 'Paskowy:size=40',  -- font for complete conky unless in code defined
 	max_text_width = 0,							-- 0 will make sure line does not get broken if width too smal
 	max_user_text = 16384,						-- max text in conky default 16384
 	override_utf8_locale = true,				-- force UTF8 requires xft
@@ -111,22 +107,21 @@ conky.config = {
 	--Windows
 
 	own_window = true,							-- create your own window to draw
-	own_window_argb_value = 0,			        -- real transparency - composite manager required 0-255
+	own_window_argb_value = 100,				    -- real transparency - composite manager required 0-255
 	own_window_argb_visual = true,				-- use ARGB - composite manager required
 	own_window_class = 'Conky',					-- manually set the WM_CLASS name for use with xprop
 	own_window_colour = '#000000',				-- set colour if own_window_transparent no
 	own_window_hints = 'undecorated,below,above,sticky,skip_taskbar,skip_pager',  -- if own_window true - just hints - own_window_type sets it
-	own_window_transparent = true,				-- if own_window_argb_visual is true sets background opacity 0%
+	own_window_transparent = false,				-- if own_window_argb_visual is true sets background opacity 0%
 	own_window_title = 'system_conky',			-- set the name manually  - default conky "hostname"
 	own_window_type = 'desktop',				-- if own_window true options are: normal/override/dock/desktop/panel
 
 
 	--Colours
 
-	default_color = '#EEEEEE',  				-- default color and border color
-	color0 = '#B0E0E6',
-	color1 = '#778899',
-	color2 = '#D8BFD8',
+	default_color = '#ffa726',  				-- default color and border color
+	color1 = '#ffffff',
+	color2 = '#000000',
 	color3 = '#cccccc',
 	color4 = '#BDBDBD',
 	color5 = '#CCCCCC',
@@ -139,14 +134,22 @@ conky.config = {
 
 
 	--Lua
-	lua_load = '$HOME/.config/conky/lua/clock-dots-grey.lua',
-	lua_draw_hook_pre = 'draw_clock',
+
 
 };
 
 conky.text = [[
-#${image $HOME/.config/conky/images/arcolinux-200x200.png -s 150x150}
-${voffset 100}${alignr}${time %d}
-${alignr}${time %B}
-${alignr}${time %A}
-]];
+${voffset -20}${font Roboto:Light:size=48}$alignr${time %H}${color0}:${time %M}${font}${color}
+${voffset -50}${font Roboto:Light:size=24}${voffset 12}$alignr${color0}${execi 300 LANG=${template9} LC_TIME=${template9} date +"%A"}${color},\
+ ${execi 300 LANG=${template9} LC_TIME=${template9} date +"%d"}\
+${color0} ${execi 300 LANG=${template9} LC_TIME=${template9} date +"%B"}${font}${voffset 2}
+${voffset -70}${hr}${color}${voffset 4}
+${voffset -70}${font Roboto:pixelsize=13}${alignr} USER: ${color0}${execi 5000 whoami}${color} ${color1}I${color} MACHINE: ${color0}$nodename${color} ${color1}I${color} UPTIME: ${color0}$uptime${color}
+${font Roboto:pixelsize=13}${alignr} DISTRIBUTION: ${color0}${execi 6000 awk -F'=' '/DESCRIPTION/ {print $2}' /etc/lsb-release |sed 's/"//g'}${color} ${color1}I${color} VERSION: ${color0}${execi 6000 awk -F'=' '/DISTRIB_RELEASE=/ {printf $2" "} /CODENAME/ {print $2}' /etc/lsb-release}${color}
+${font Roboto:pixelsize=13}${alignr} ARCHITECTURE: ${color0}${machine}${color} ${color1}I${color} KERNEL: ${color0}${kernel}${color}
+${font Roboto:pixelsize=13}${alignr} ROOT: ${color0}${fs_used /}${color} / ${color0}${fs_size /}${color} ${color1}I${color} HOME: ${color0}${fs_used /home}${color} / ${color0}${fs_size /home}${color}
+${font Roboto:pixelsize=13}${alignr} CPU: ${color0}${cpu cpu0}%${color} ${color1}I${color} RAM: ${color0}$mem / $memmax${color} HD: ${color0}${fs_used_perc}%${color}
+${font Roboto:pixelsize=13}${alignr} SWAP: ${color0}${swap} / ${swapmax}${color} ${color1}I${color} SYS TEMP: ${color0}${execi 10 sensors | grep 'Core 0' | awk {'print $3'}}${color}
+${font Roboto:pixelsize=13}${alignr} YOU CAN INSTALL ${color0}${execpi 12000 checkupdates | wc -l} UPDATE(S)${color}${voffset -60}
+]]
+

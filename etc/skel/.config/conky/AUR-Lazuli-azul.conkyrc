@@ -55,12 +55,12 @@ conky.config = {
 
 	--Placement
 
-	alignment = 'top_right',
-	gap_x = 10,
-	gap_y = 10,
-	minimum_height = 1060,
-	minimum_width = 280,
-	maximum_width = 280,
+	alignment = 'middle_right',
+	gap_x = 0,
+	gap_y = 30,
+	minimum_height = 800,
+	minimum_width = 290,
+	maximum_width = 290,
 
 	--Graphical
 
