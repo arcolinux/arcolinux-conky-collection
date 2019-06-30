@@ -1,7 +1,7 @@
 --[[
 #=====================================================================================
 #
-# Date    : 09/09/2017
+# Date    : 30/06/2019
 # Author  : Erik Dubois
 # Source  : Aureola - https://github.com/erikdubois/Aureola
 # Version : v3.0.0
@@ -149,7 +149,7 @@ ${if_existing /proc/acpi/battery/BAT0/info}${if_match ${battery_percent BAT0} <=
 ${color1}${membar 10,150} Mem ${alignr}${if_match ${memperc} > 80}${color9}${else}${color6}${endif}${color6}${memperc}%
 ${color1}${fs_bar 10,120}${alignr}${color6}${fs_free}${color} of${color6} ${fs_size}${color}
 ${color1}Total Processes${alignr}${color6}${processes}
-${color1}Packages Upgrades${alignr}${color6}${execi 3600 checkupdates | wc -l}
+${color1}Packages Upgrades${alignr}${color6}${execi 3600 checkupdates | wc -l} 
 ${color1}${hr 2}
 ${font SourceSansPro-ExtraLight size=12:weight:bold}${color1}Cpu
 ${font SourceSansPro-ExtraLight size=8:weight:italic}${color6}${execi 6000 cat /proc/cpuinfo | grep -i 'Model name' -m 1 | cut -c14-43}${font}
@@ -170,6 +170,7 @@ ${offset 30}${color1}${top_mem name 4}${alignr}${alignr}${color6}${top_mem mem 4
 ${offset 30}${color1}${top_mem name 5}${alignr}${alignr}${color6}${top_mem mem 5}
 ${offset 30}${color1}${top_mem name 6}${alignr}${alignr}${color6}${top_mem mem 6}
 ${offset 0}${color1}${color1}Memory used${alignr}${color6}${mem}
+${offset 0}${color1}${color1}Memory perc${alignr}${color6}${memperc}%
 ${offset 0}${color1}Total Memory${alignr}${color6}${memmax}
 ${color1}${hr 2}
 ${alignc}A R C O L I N U X   N E M E S I S
