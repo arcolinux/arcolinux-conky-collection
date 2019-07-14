@@ -71,7 +71,7 @@ alignment = 'top_right',
 minimum_width = 162,
 minimum_height = 1080,
 maximum_width = 162,
-gap_x = 5,
+gap_x = 4,
 gap_y = 30,
 
 -- ------------------------- Lua scripts
