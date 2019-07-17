@@ -28,10 +28,12 @@ conky.config = {
 -- ------------------------- Windows Settings
 own_window = true,
 own_window_type = 'normal',
-own_window_transparent = true,
+own_window_transparent = false,
 own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
 own_window_argb_visual = false,
-own_window_colour = '#484B52',
+--arc color
+--own_window_colour = '#273543',
+own_window_colour = '#000000',
 own_window_argb_value = 180,
 
 double_buffer = true,
