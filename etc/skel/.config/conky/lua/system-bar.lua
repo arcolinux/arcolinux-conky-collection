@@ -684,6 +684,7 @@ function conky_wired_bar(sx, sy,barheight,text,font,font_size,value)
 
 	-- display percentage value
 	cairo_move_to (cr,sx-30,sy+barheight+font_size)
+	cairo_set_source_rgba (cr, red, green,blue, 0.6);
 	cairo_show_text(cr,value.."%")
 	-- draw highlighted VU parts
 	for i,v in ipairs(percentage) do
@@ -738,6 +739,7 @@ function conky_wired_bar_temp(sx, sy,barheight,text,font,font_size,value)
 
 	-- display temperature value
 	cairo_move_to (cr,sx-30,sy+barheight+font_size)
+	cairo_set_source_rgba (cr, red, green,blue, 0.6);	
 	cairo_show_text(cr,value.."C")
 	-- draw highlighted VU parts
 	for i,v in ipairs(percentage) do
