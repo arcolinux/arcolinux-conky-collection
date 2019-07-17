@@ -69,9 +69,9 @@ info.scrollcounter = 1
 
 -- vars below are filled by conky_detect_hardware
 cpucores={} 	        -- number of detected cpu cores
-fsnames={}	        	-- full path to disk aka /media/data1
+fsnames={}	        -- full path to disk aka /media/data1
 disknames={}	        -- last part of path aka data1
-diskdevicenames={}		-- devicename aka sda etc
+diskdevicenames={}	-- devicename aka sda etc
 hardware={}
 hardware.flag=1
 hardware.cpucores=0
@@ -171,11 +171,6 @@ updates=tonumber(conky_parse('${updates}'))
 		retx,rety=conky_wired_tab_mem(startx,rety+tabvsep,150,60,"Memory","Technical CE",13,themes.tred,themes.tgreen,themes.tblue)
 	end
 
-	-- show harddisk usage
-	if show_storage == "yes" then
-		retx,rety=conky_wired_tab_storage(startx,rety+tabvsep,150,100,"Storage","Technical CE",13,themes.tred,themes.tgreen,themes.tblue)
-	end
-
 	-- network
 	if show_network == "yes" then
 		retx,rety=conky_wired_tab_network(startx,rety+tabvsep,150,85,info.ifacetype.." Network","Technical CE",13,themes.tred,themes.tgreen,themes.tblue)
@@ -184,6 +179,11 @@ updates=tonumber(conky_parse('${updates}'))
 	-- show netinfo
 	if show_netinfo == "yes" then
 		retx,rety=conky_wired_tab_netinfo(startx,rety+tabvsep,150,60,"Net","Technical CE",13,themes.tred,themes.tgreen,themes.tblue)
+	end
+
+	-- show harddisk usage
+	if show_storage == "yes" then
+		retx,rety=conky_wired_tab_storage(startx,rety+tabvsep,150,100,"Storage","Technical CE",13,themes.tred,themes.tgreen,themes.tblue)
 	end
 
 -- destroy graphic instance
@@ -243,6 +243,7 @@ function conky_wired_tab_cpu(x,y,width,height,text,font,font_size,r,g,b)
 	local vuheight=15  --VU barheight
 	local onebarheight=vuheight+8
 	local basey=y
+	--local numofcpus=table.getn(cpucores)
 	local numofcpus= tonumber(conky_ownpreexec("cat /proc/cpuinfo | grep 'processor' | wc -l | tr -d ' '"))
 	--  local numofcpus="4"
 
@@ -739,7 +740,7 @@ function conky_wired_bar_temp(sx, sy,barheight,text,font,font_size,value)
 
 	-- display temperature value
 	cairo_move_to (cr,sx-30,sy+barheight+font_size)
-	cairo_set_source_rgba (cr, red, green,blue, 0.6);	
+	cairo_set_source_rgba (cr, red, green,blue, 0.6);
 	cairo_show_text(cr,value.."C")
 	-- draw highlighted VU parts
 	for i,v in ipairs(percentage) do
