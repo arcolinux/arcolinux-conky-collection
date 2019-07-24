@@ -45,7 +45,25 @@ autostart_on()
 {
 
 if [ -e /home/$USER/.config/autostart/am-conky-session.desktop ]; then
-    sed -i -r s/Hidden=.*/Hidden=false/ /home/$USER/.config/autostart/am-conky-session.desktop
+  if ! grep -q "Hidden" /home/$USER/.config/autostart/am-conky-session.desktop
+    then
+      echo  "Hidden=false" | tee -a /home/$USER/.config/autostart/am-conky-session.desktop
+    else
+      sed -i -r s/Hidden=.*/Hidden=false/ /home/$USER/.config/autostart/am-conky-session.desktop
+  fi
+else
+	echo '[Desktop Entry]
+Comment=
+Encoding=UTF-8
+Exec=am-conky-session
+Name=am-conky-session
+StartupNotify=false
+Terminal=false
+Type=Application
+Version=0.9.4
+Hidden=false' >> /home/$USER/.config/autostart/am-conky-session.desktop
+
+
 fi
 
 }
