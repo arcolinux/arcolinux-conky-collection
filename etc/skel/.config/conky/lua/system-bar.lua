@@ -52,6 +52,7 @@ themes.gold={.831,.686,.215}
 themes.black={.031,.031,.031}
 themes.maroon={.501,0,0}
 themes.sienna={.627,.321,.176}
+themes.purple={.600,.500,.650}
 themes.blue={0,0,.65}
 themes.tred=0
 themes.tgreen=0
