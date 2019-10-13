@@ -119,7 +119,7 @@ ${voffset -15}${alignc 0}${font Deja sans:size=12}Wired
 ${font StyleBats:Bold:size=14}V${font} Up: ${upspeed enp0s31f6}${alignr}${upspeedgraph enp0s31f6 8,60 black black}
 ${voffset 4}${font StyleBats:Bold:size=14}T${font} Down: ${downspeed enp0s31f6}${alignr}${downspeedgraph enp0s31f6 8,60 black black}
 ${voffset 4}${font StyleBats:Bold:size=14}N${font} Upload: ${alignr}${totalup enp0s31f6}
-${voffset 4}${font StyleBats:Bold:size=14}X${font} Dowload: ${alignr}${totaldown enp0s31f6}
+${voffset 4}${font StyleBats:Bold:size=14}X${font} Download: ${alignr}${totaldown enp0s31f6}
 ${else}${if_existing /proc/net/route wlp3s0}${alignc 0}${font Deja sans:size=12}Wireless
 ${font}SSID: ${wireless_essid wlp3s0}
 Signal: ${wireless_link_qual_perc wlp3s0}% ${alignr}${wireless_link_bar 8,60 wlp3s0}
