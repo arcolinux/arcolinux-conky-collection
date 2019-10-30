@@ -1,0 +1,119 @@
+#!/bin/bash
+##################################################################################################################
+# Author	:   Ray Vermey
+# Co-Editor	:	Erik Dubois
+# Website	:	https://www.erikdubois.be
+# Website	:	https://www.arcolinux.info
+# Website	:	https://www.arcolinux.com
+# Website	:	https://www.arcolinuxd.com
+# Website	:	https://www.arcolinuxb.com
+# Website	:	https://www.arcolinuxiso.com
+# Website	:	https://www.arcolinuxforum.com
+##################################################################################################################
+
+#Variables
+ARG=$1
+WDIR="/home/$USER/.config/conky"
+
+
+function checkArguments() {
+	if [ -z $ARG ]
+	then
+		echo "This application needs arguments -n for next or -p for previous"
+		exit 1
+	fi
+}
+
+function checkWrongArguments() {
+	case $ARG in
+	-n)
+	echo "Next conky will be selected" ;;
+	-p)
+	echo "Previous conky will be selected" ;;
+	*)
+	echo "You can only choose -n or -p" ; exit 1 ;;
+	esac
+}
+
+function deleteEmptyConkyList() {
+	if [ ! -s $WDIR/.conky_list.txt ]
+	then
+		echo "Deleted .conky_list.txt because it is empty"
+		rm $WDIR/.conky_list.txt
+	fi
+}
+
+function conkylistExists() {
+	if [ ! -f $WDIR/.conky_list.txt ]
+	then
+		echo "Created new .conky_list.txt because it did not exist"
+		find $WDIR -name "*.conkyrc" | grep -v backup | grep -v Trash >.conky_list.txt
+	fi
+}
+
+function checkCSF() {
+	#check if there is a conkyrc in the conky-sessionfile
+	if grep  conkyrc ~/.config/conky/conky-sessionfile > /dev/null
+	then
+		echo "conky-sessionfile exists"
+	else
+	    echo "conky-sessionfile does not exist"
+	    echo "conky -c /home/$USER/.config/conky/AUR-ArcoLinux.conkyrc & sleep 1s" > $WDIR/conky-sessionfile
+	fi
+}
+
+function countTotalConkies() {
+	TOTAL_CONKYS=`wc -l $WDIR/.conky_list.txt | cut -d" " -f1`
+}
+
+function checkNewConkies() {
+	#check if there is a new conky
+	CHECK_TOTAL_CONKYS=`find /home/$USER/.config/conky -name "*.conkyrc" | wc -l | cut -d" " -f1`
+	if [ $TOTAL_CONKYS != $CHECK_TOTAL_CONKYS ]
+	then
+		echo "Created new .conky_list.txt because of new conkies"
+		find $WDIR -name "*.conkyrc" | grep -v backup | grep -v Trash >.conky_list.txt
+		countTotalConkies
+	fi
+}
+
+function rotateConkies() {
+	#
+	#find active conky in conky-sessionfile
+	#
+	ACTIVE_CONKY=`cat ~/.config/conky/conky-sessionfile | cut -d" " -f3 | tail -1`
+	LINE_ACTIVE_CONKY=`grep -n $ACTIVE_CONKY .conky_list.txt| cut -d: -f1`
+
+		NEXT=$LINE_ACTIVE_CONKY
+		if [ $ARG == "-p" ]
+		then
+			NEXT=$((NEXT - 1))
+		elif [ $ARG == "-n" ]
+		then
+			NEXT=$((NEXT + 1))
+		fi
+		if [ $NEXT -gt $TOTAL_CONKYS ]
+		then
+			NEXT=1
+		elif [ $NEXT -lt 1 ]
+		then
+			NEXT=$TOTAL_CONKYS
+		fi
+
+	CONKY=`sed -n "${NEXT} p" $WDIR/.conky_list.txt`
+	# activate chosen conky
+	killall conky >/dev/null 2>&1
+	echo "conky -c $CONKY & sleep 1s" > ~/.config/conky/conky-sessionfile
+	echo Showing $NEXT $CONKY
+	conky -c $CONKY >/dev/null 2>&1 &
+}
+
+cd $WDIR
+checkArguments
+checkWrongArguments
+deleteEmptyConkyList
+conkylistExists
+checkCSF
+countTotalConkies
+checkNewConkies
+rotateConkies
