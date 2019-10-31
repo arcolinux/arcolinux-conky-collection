@@ -144,7 +144,7 @@ ${voffset -10}${color1}${font SourceSansPro-ExtraLight:size=10:weight:bold:itali
 ${color1}${font SourceSansPro-ExtraLight:size=12:weight:bold}Uptime ${alignr}${color6} $uptime
 ${color1}SSD${alignr}${color6}${fs_free}${color} of ${color6}${fs_size}${color}
 ${if_existing /proc/acpi/battery/BAT0/info}${if_match ${battery_percent BAT0} <= 20}${color3}${battery_bar 10,150 BAT0} Battery${alignr}${color7}${battery_percent BAT0}%${else}${color1}${battery_bar 10,150 BAT0} Battery${alignr}${color1}${battery_percent BAT0}%${endif}${else}${voffset -20}${endif}
-${color1}Packages Upgrades${alignr}${color6}${execi 3600 checkupdates | wc -l} 
+${color6}${execi 3600 checkupdates | wc -l}${color1}  packages to update
 #${color1}${font SourceSansPro-ExtraLight:size=12:weight:bold}Cpu Temp ${alignr}${color6}${execi 10 sensors | grep 'Core 0' | awk {'print $3'}}
 ${color1}${hr 2}
 ${font SourceSansPro-ExtraLight size=12:weight:bold}${color1}Cpu
