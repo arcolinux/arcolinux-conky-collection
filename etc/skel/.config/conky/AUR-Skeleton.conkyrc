@@ -53,12 +53,12 @@ conky.config = {
 
 	--Placement
 
-	alignment = 'top_right',
+	alignment = 'middle_right',
 	--Arch Duoscreen
 	--gap_x = -1910,
 	gap_x = 5,
 	gap_y = 5,
-	minimum_height = 1100,
+	minimum_height = 800,
 	minimum_width = 240,
 	maximum_width = 240,
 
@@ -181,44 +181,14 @@ ${goto 15}|${goto 60}+-- ${color3}${top_mem name 3}${goto 155}${color4}${top_mem
 ${goto 15}|
 ${goto 12}${color1}+----Net ${color}
 ${goto 15}|${goto 40}|
-#${goto 15}|${goto 38}+-- ${color2}Ip${goto 155}${addr enp2s0}${color}
+#${goto 15}|${goto 38}+-- ${color2}Ip${goto 155}${addr enp0s31f6}${color}
 ${goto 15}|${goto 38}+-- ${color2}Up${color}
-${goto 15}|${goto 40}|${goto 60}+-- ${color3}Speed${goto 155}${color4}${upspeedf enp2s0}KB${color}
-${goto 15}|${goto 40}|${goto 60}+-- ${color3}Total${goto 155}${color4}${totalup enp2s0}${color}
+${goto 15}|${goto 40}|${goto 60}+-- ${color3}Speed${goto 155}${color4}${upspeedf enp0s31f6}KB${color}
+${goto 15}|${goto 40}|${goto 60}+-- ${color3}Total${goto 155}${color4}${totalup enp0s31f6}${color}
 ${goto 15}|${goto 40}|
 ${goto 15}|${goto 38}+-- ${color2}Down${color}
-${goto 15}|${goto 60}+-- ${color3}Speed${goto 155}${color4}${downspeedf enp2s0}KB${color}
-${goto 15}|${goto 60}+-- ${color3}Total${goto 155}${color4}${totaldown enp2s0}${color}
-${goto 15}|
-${goto 12}${color1}+----Dropbox${color}
-${if_running dropbox}\
-${goto 15}|${goto 40}| 
-${goto 15}|${goto 38}+-- ${color2}Status${color4}${alignr}${execi 3 python2 ~/.config/conky/scripts/dropbox/dropbox.py status}${color}
-${goto 15}|\
-${else}\
-${goto 15}|${goto 40}| 
-${goto 15}|${goto 38}+-- ${color2}Status${alignr}${color4} Offline${color}
-${goto 15}|${endif}
-${goto 12}${color1}+----Insync${color}
-${if_running insync}\
-${goto 15}|${goto 40}| 
-${goto 15}|${goto 38}+-- ${color2}Status${color4}${alignr}${execi 3 insync get_status | tr '[:upper:]' '[:lower:]'}${color}
-${goto 15}|\
-${else}\
-${goto 15}|${goto 40}| 
-${goto 15}|${goto 38}+-- ${color2}Status${alignr}${color4} Offline${color}
-${goto 15}|${endif}
-${goto 12}${color1}+----Spotify Playing :\
-${color1}${if_running spotify}${color}
-${goto 15}|${goto 40}|
-${goto 15}|${goto 38}+--${color2}Title${alignr}${color4}${execi 5 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'|egrep -A 1 "title"|egrep -v "title"|cut -b 44-|cut -d '"' -f 1|egrep -v ^$}${color}
-${goto 15}|${goto 38}+--${color2}Artist${color4}${alignr}${execi 5 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'|egrep -A 2 "artist"|egrep -v "artist"|egrep -v "array"|cut -b 27-|cut -d '"' -f 1|egrep -v ^$}${color}
-${goto 15}|${goto 38}+--${color2}Album${color4}${alignr}${execi 5 dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'|egrep -A 1 "album"|egrep -v "album"|cut -b 44-|cut -d '"' -f 1|egrep -v ^$}${color}
-${goto 12}+-----------------------------------------------------------+
-${else}
-${color}${goto 15}|${goto 40}|
-${goto 15}|${goto 38}+-- ${color2}Status${color4}${alignr}Offline${color}
+${goto 15}|${goto 60}+-- ${color3}Speed${goto 155}${color4}${downspeedf enp0s31f6}KB${color}
+${goto 15}|${goto 60}+-- ${color3}Total${goto 155}${color4}${totaldown enp0s31f6}${color}
 ${goto 15}|
 ${goto 12}+-----------------------------------------------------------+
-${endif}
 ]]

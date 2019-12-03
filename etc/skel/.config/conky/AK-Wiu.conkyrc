@@ -85,13 +85,17 @@ use_spacer none
 own_window_argb_value 0
 own_window_argb_visual yes
 TEXT
-${font Zekton:Bold:size=11}SYSTEM ${hr 2}
-${font Zekton:Bold:size=12}${alignc 0}${exec cut -d '\' -f 1 /etc/issue}
-${voffset -10}${alignc 0}${font OpenLogos:size=40}U
-${voffset -35}${alignc =10}${font Droid sans:size=16}${nodename}
+${font Zekton:Bold:size=11}${alignc}SYSTEM
+${hr 2}
+${font Zekton:Bold:size=12}${alignc}${exec cut -d '\' -f 1 /etc/issue}
+${voffset -20}${alignc}&
+${alignc =10}${font Zekton:Bold:size=12}ArcoLinux
 #PC
-${font Zekton:Bold:size=12}${alignc 0}KEEP
-${font Zekton:Bold:size=12}${alignc 0}ROLLING
+${hr 2}
+${font Zekton:Bold:size=12}${alignc}JUST
+${font Zekton:Bold:size=12}${alignc}KEEP
+${font Zekton:Bold:size=12}${alignc}ROLLING
+${hr 2}
 ${font StyleBats:Bold:size=16}K${font} Kernel: ${alignr}${kernel}
 ${font StyleBats:Bold:size=16}A${font} CPU 1: ${cpu cpu1}% ${alignr}${cpubar cpu1 8,60}
 ${font StyleBats:Bold:size=16}A${font} CPU 2: ${cpu cpu2}% ${alignr}${cpubar cpu2 8,60}

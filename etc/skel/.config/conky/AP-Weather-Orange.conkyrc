@@ -79,10 +79,10 @@ mpd_port = 6600,
 -------------------------------------
 --  Window Specifications
 -------------------------------------
-gap_x=15,
-gap_y=50,
+gap_x=30,
+gap_y=30,
 
-minimum_height=700,
+minimum_height=500,
 minimum_width=200,
 
 alignment = 'top_right',
@@ -241,32 +241,6 @@ ${color0}${fs_bar /}
 #$alignr${color1}${font Roboto:pixelsize=10}${voffset 10}${kernel} ${machine}${font}
 $alignr${color1}${font Roboto:pixelsize=12}${voffset 10}${uptime} UPTIME${font}
 # Here is end of code I have taken from BARS Conky Vertical by Kestrel8891
-
-# And now classic conky
-# ${color0}Host:$alignr${color1}$nodename
-# ${color0}Uptime:$alignr${color1}$uptime
-# ${color0}RAM:$alignr${color1}$mem/$memmax
-# ${color0}Swap usage:$alignr${color1}$swap/$swapmax
-# ${color0}Disk usage:$alignr${color1}${fs_used /}/${fs_size /}
-# ${color0}CPU usage:$alignr${color1}${cpu cpu0}%
-${font Roboto:pixelsize=14}${color2}\
-${alignc}S H O R T C U T    K E Y S
-${hr}
-${color0}Alt+F2$alignr${color1} Run Dialog
-${color0}Alt+F3$alignr${color1} Alt Menu
-${color0}Super+Space$alignr${color1} Main Menu
-${color0}Super+Tab$alignr${color1} Client Menu
-${color0}Super+t$alignr${color1} Terminal
-${color0}Super+f$alignr${color1} File Manager
-${color0}Super+e$alignr${color1} Editor
-${color0}Super+m$alignr${color1} Media Player
-${color0}Super+w$alignr${color1} Web Browser
-${color0}Super+h$alignr${color1} Task Manager
-${color0}Super+l$alignr${color1} Lock Screen
-${color0}Super+v$alignr${color1} Volume Control
-${color0}Super+x$alignr${color1} Logout
-${color0}PrtSc$alignr${color1} Screenshot
-# End of classic conky
 
 # Here is code I have taken from Workspace Indicator by from aresgon
 ${goto 100}${font Droid Sans :size=25}${if_match ${desktop}==1}${color0}${endif}•${color1}${offset 10}${if_match ${desktop}==2}${color0}${endif}•${color1}${offset 10}${if_match ${desktop}==3}${color0}${endif}•${color1}${offset 10}${if_match ${desktop}==4}${color0}${endif}•${color1}${font}
