@@ -59,7 +59,7 @@ conky.config = {
 	--Arch Duoscreen
 	--gap_x = -1910,
 	gap_x = 20,									-- pixels between right or left border
-	gap_y = 5,									-- pixels between bottom or left border
+	gap_y = 50,									-- pixels between bottom or left border
 	minimum_height = 279,						-- minimum height of window
 	minimum_width = 199,						-- minimum height of window
 	maximum_width = 199,						-- maximum height of window
