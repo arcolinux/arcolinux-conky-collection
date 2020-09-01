@@ -1,90 +1,93 @@
-#Credits : Andy Kefi from Facebook
-use_xft yes
-xftfont DejaVu Sans:size=10
-xftalpha 0.8
-text_buffer_size 2048
+conky.config = {
+--Credits : Andy Kefi from Facebook
+	use_xft = true,
+	font = 'DejaVu Sans:size=10',
+	xftalpha = 0.8,
+	text_buffer_size = 2048,
 
-# Update interval in seconds
-update_interval 1
+-- Update interval in seconds
+	update_interval = 1,
 
-# This is the number of times Conky will update before quitting.
-total_run_times 0
+-- This is the number of times Conky will update before quitting.
+	total_run_times = 0,
 
-own_window yes
-own_window_transparent yes
-#own_window_type override
-#own_window_type desktop
-own_window_type normal #use this if you want a nice shadow to appear around conky
+	own_window = true,
+	own_window_transparent = true,
+--own_window_type override
+--own_window_type desktop
+	own_window_type = 'normal',--use this if you want a nice shadow to appear around conky
 
-# If own_window is yes, these window manager hints may be used
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+-- If own_window is yes, these window manager hints may be used
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 
-# Use double buffering (reduces flicker, may not work for everyone)
-double_buffer yes
+-- Use double buffering (reduces flicker, may not work for everyone)
+	double_buffer = true,
 
-# Minimum size of text area
-minimum_size 220 0
-#maximum_width 200
+-- Minimum size of text area
+	minimum_width = 220, minimum_height = 0,
+--maximum_width 200
 
-# Draw shades?
-draw_shades no
+-- Draw shades?
+	draw_shades = false,
 
-# Draw outlines?
-draw_outline no
+-- Draw outlines?
+	draw_outline = false,
 
-# Draw borders around text
-draw_borders no
+-- Draw borders around text
+	draw_borders = false,
 
-# Stippled borders?
-stippled_borders 0
+-- Stippled borders?
+	stippled_borders = 0,
 
-# border margins
-border_margin 5
+-- border margins
+	border_margin = '5',
 
-# border width
-border_width 1
+-- border width
+	border_width = 1,
 
-# Default colors and also border colors
-default_color white
-#default_shade_color black
-#default_outline_color grey
-own_window_colour 000000
+-- Default colors and also border colors
+	default_color = 'white',
+--default_shade_color black
+--default_outline_color grey
+	own_window_colour = '#000000',
 
-# Text alignment, other possible values are commented
-#alignment top_left
-alignment top_right
-#alignment bottom_left
-#alignment bottom_right
-#alignment middle_right
+-- Text alignment, other possible values are commented
+--alignment top_left
+	alignment = 'top_right',
+--alignment bottom_left
+--alignment bottom_right
+--alignment middle_right
 
-# Gap between borders of screen and text
-# same thing as passing -x at command line
-gap_x 20
-gap_y 50
+-- Gap between borders of screen and text
+-- same thing as passing -x at command line
+	gap_x = 20,
+	gap_y = 50,
 
-# Subtract file system buffers from used memory?
-no_buffers yes
+-- Subtract file system buffers from used memory?
+	no_buffers = true,
 
-# set to yes if you want all text to be in uppercase
-uppercase no
+-- set to yes if you want all text to be in uppercase
+	uppercase = false,
 
-# number of cpu samples to average
-# set to 1 to disable averaging
-cpu_avg_samples 2
+-- number of cpu samples to average
+-- set to 1 to disable averaging
+	cpu_avg_samples = 2,
 
-# number of net samples to average
-# set to 1 to disable averaging
-net_avg_samples 2
+-- number of net samples to average
+-- set to 1 to disable averaging
+	net_avg_samples = 2,
 
-# Force UTF8? note that UTF8 support required XFT
-override_utf8_locale yes
+-- Force UTF8? note that UTF8 support required XFT
+	override_utf8_locale = true,
 
-# Add spaces to keep things from moving about? This only affects certain objects.
-use_spacer none
+-- Add spaces to keep things from moving about? This only affects certain objects.
+	use_spacer = 'none',
 
-own_window_argb_value 0
-own_window_argb_visual yes
-TEXT
+	own_window_argb_value = 0,
+	own_window_argb_visual = true,
+};
+
+conky.text = [[
 ${font Zekton:Bold:size=11}${alignc}SYSTEM
 ${hr 2}
 ${font Zekton:Bold:size=12}${alignc}${exec cut -d '\' -f 1 /etc/issue}
@@ -132,3 +135,4 @@ ${voffset 4}${font StyleBats:Bold:size=14}T${font} Down: ${downspeed wlp3s0}${al
 ${voffset 4}${font StyleBats:Bold:size=14}N${font} Upload: ${alignr}${totalup wlp3s0}
 ${voffset 4}${font StyleBats:Bold:size=14}X${font} Download: ${alignr}${totaldown wlp3s0}
 ${endif}
+]];

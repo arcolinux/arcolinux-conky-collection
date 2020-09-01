@@ -1,1 +1,1 @@
-conky -c ~/.config/conky/AUR-ArcoLinux.conkyrc
+conky -c /home/erik/.config/conky/AUR-Misty-LUA.conkyrc & sleep 1s

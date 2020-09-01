@@ -1,33 +1,36 @@
-#https://www.deviantart.com/mowgli-writes/art/qlocktwo-conky-470067388
-#
-background no
-own_window yes
-own_window_type desktop
-own_window_class Conky
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-alignment mm
-gap_x 0
-#575
-gap_y 0
-#310
-use_xft yes
-xftfont Source Sans Pro Bold:size=18
-xftalpha 0.1
-update_interval 1
-uppercase yes
-double_buffer yes
-own_window_argb_visual yes
-own_window_argb_value 0
-draw_shades yes
-default_shade_color 000000
-default_color ffffff
-color1 2d2d2d
-#2d2d2d
-#4A2B45
-#382536
-#3F2E2F
-#000000
-TEXT
+conky.config = {
+--https://www.deviantart.com/mowgli-writes/art/qlocktwo-conky-470067388
+
+	background = false,
+	own_window = true,
+	own_window_type = 'desktop',
+	own_window_class = 'Conky',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	alignment = 'middle_middle',
+	gap_x = 0,
+--575
+	gap_y = 0,
+--310
+	use_xft = true,
+	font = 'Source Sans Pro Bold:size=18',
+	xftalpha = 0.1,
+	update_interval = 1,
+	uppercase = true,
+	double_buffer = true,
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+	draw_shades = true,
+	default_shade_color = '#000000',
+	default_color = '#ffffff',
+	color1 = '#2d2d2d',
+--2d2d2d
+--4A2B45
+--382536
+--3F2E2F
+--000000
+};
+
+conky.text = [[
 ${alignc}${color}I T ${color1}L ${color}I S ${color1}A S T I M E
 ${alignc}${if_match ${exec date +"%M"} < 35}${if_match ${exec date +"%M"} >= 15}${if_match ${exec date +"%M"} < 20}${color}${endif}${endif}A ${color1}C ${if_match ${exec date +"%M"} >= 15}${if_match ${exec date +"%M"} < 20}${color}${endif}${endif}Q U A R T E R ${color1}D C
 ${alignc}${if_match ${exec date +"%M"} >= 20}${if_match ${exec date +"%M"} < 30}${color}${endif}${endif}T W E N T Y ${if_match ${exec date +"%M"} >= 25}${if_match ${exec date +"%M"} < 30}${color}${endif}${else}${color1}${endif}${if_match ${exec date +"%M"} >= 5}${if_match ${exec date +"%M"} < 10}${color}${endif}${endif}F I V E ${color1}X
@@ -46,3 +49,4 @@ ${alignc}${if_match ${exec date +"%I"} == 3}${color}${else}${color1}${endif}F O 
 ${alignc}${if_match ${exec date +"%I"} == 7}${color}${else}${color1}${endif}E I G H T${if_match ${exec date +"%I"} == 10}${color}${else}${color1}${endif} E L E V E N
 ${alignc}${if_match ${exec date +"%I"} == 6}${color}${else}${color1}${endif}S E V E N${if_match ${exec date +"%I"} == 11}${color}${else}${color1}${endif} T W E L V E
 ${alignc}${if_match ${exec date +"%I"} == 9}${color}${else}${color1}${endif}T E N ${endif}${color1}S E ${if_match ${exec date +"%M"} < 5}${color}${endif}O C L O C K
+]];

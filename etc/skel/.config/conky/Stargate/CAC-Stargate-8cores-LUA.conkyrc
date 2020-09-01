@@ -1,67 +1,70 @@
-#############################
-## Stargate Command Window ##
-#############################
+conky.config = {
+--############################
+--# Stargate Command Window ##
+--############################
 
-# Graphics Settings
-############################
-background yes
-double_buffer yes
-update_interval 1
-total_run_times 0
-draw_shades no
-draw_outline no
-draw_borders no
-draw_graph_borders no
+-- Graphics Settings
+--###########################
+	background = true,
+	double_buffer = true,
+	update_interval = 1,
+	total_run_times = 0,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
 
-border_inner_margin 15
-border_outer_margin 0
+	border_inner_margin = 15,
+	border_outer_margin = 0,
 
-minimum_size 707 512
-maximum_width 707
+	minimum_width = 707, minimum_height = 512,
+	maximum_width = 707,
 
-# Window specifications
-############################
-own_window yes
-own_window_class Conky
-own_window_type desktop
-own_window_transparent yes
-own_window_colour black
-own_window_argb_visual yes
-own_window_argb_value 50
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+-- Window specifications
+--###########################
+	own_window = true,
+	own_window_class = 'Conky',
+	own_window_type = 'desktop',
+	own_window_transparent = true,
+	own_window_colour = 'black',
+	own_window_argb_visual = true,
+	own_window_argb_value = 50,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 
-alignment tr
-gap_x 10
-gap_y 50
+	alignment = 'top_right',
+	gap_x = 10,
+	gap_y = 50,
 
-# Text Settings
-############################
-override_utf8_locale yes
-text_buffer_size 2048
-use_xft yes
-#xftfont courier new:size=12
-xftfont arial:size=10
-xftalpha 0.9
-uppercase no
+-- Text Settings
+--###########################
+	override_utf8_locale = true,
+	text_buffer_size = 2048,
+	use_xft = true,
+--xftfont courier new:size=12
+	font = 'arial:size=10',
+	xftalpha = 0.9,
+	uppercase = false,
 
-# Color Settings
-############################
-default_color 47d9e8 
+-- Color Settings
+--###########################
+	default_color = '#47d9e8',
 
-# Data Acquisition Variables
-############################
-update_interval 1
-cpu_avg_samples 2
-net_avg_samples 2
-temperature_unit fahrenheit
-no_buffers yes # Subtract (file system) buffers from used memory?
+-- Data Acquisition Variables
+--###########################
+	update_interval = 1,
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
+	temperature_unit = 'fahrenheit',
+	no_buffers = true,-- Subtract (file system) buffers from used memory?
 
-# Lua Load
-############################
-lua_load $HOME/.config/conky/Stargate/stargate.lua
-lua_draw_hook_pre clock_rings
-################################################################3
-TEXT
+-- Lua Load
+--###########################
+	lua_load = '$HOME/.config/conky/Stargate/stargate.lua',
+	lua_draw_hook_pre = 'clock_rings',
+--###############################################################3
+};
+
+conky.text = [[
 ## Background Image
 ${lua stargate_bgAndRings}
 ${image $HOME/.config/conky/Stargate/StargateWidgetBackground.png -p 0,0 -s 707x512}
@@ -118,3 +121,4 @@ ${voffset 0}${goto 520}User ${font courier new:size=9}$user_names
 
 # Delete extra whitespace
 ${voffset -350}
+]];

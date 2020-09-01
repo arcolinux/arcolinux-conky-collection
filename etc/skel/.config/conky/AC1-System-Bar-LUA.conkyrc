@@ -25,7 +25,7 @@ conky.config = {
 
 -- source : https://www.gnome-look.org/p/1006484/
 -- credits : autocrosser1
--- ------------------------- Windows Settings
+-- ------------------------
 own_window = true,
 own_window_type = 'normal',
 own_window_transparent = false,
