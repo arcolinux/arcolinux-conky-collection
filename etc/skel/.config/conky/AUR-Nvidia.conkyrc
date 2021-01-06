@@ -145,7 +145,7 @@ ${color1}${hr 2}
 ${color1}${alignc}${font SourceSansPro-ExtraLight:size=18:weight:bold}${color2}${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4" " $5'}}${font}
 ${color1}${hr 2}
 
-${color1}GPU:${alignr}${color6}${exec nvidia-smi --query-gpu=gpu_name --format=csv,noheader,nounits} $color
+${color1}GPU:${alignr}${color6}${exec nvidia-smi --query-gpu=gpu_name --format=csv,noheader,nounits}$color
 ${color1}GPU Temperature ${alignr}${color6}  ${execi 60 nvidia-settings -query [gpu:0]/GPUCoreTemp -t} °C
 ${color1}GPU Utilization ${alignr}${color6}  ${exec nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits} %
 ${color1}RAM Utilization ${alignr}${color6} ${exec nvidia-smi | grep % | cut -c 37-40} MB
