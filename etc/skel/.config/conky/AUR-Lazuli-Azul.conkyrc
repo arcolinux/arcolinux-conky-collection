@@ -82,7 +82,7 @@ conky.config = {
 	stippled_borders = 0,
 
 	--Textual
-	
+
 	extra_newline = false,
 	format_human_readable = true,
 	font = 'ubuntu:size=11',
@@ -108,16 +108,16 @@ conky.config = {
 	own_window_transparent = no,
 	own_window_title = 'system_conky',
 	own_window_type = 'normal',-- # options are: normal/override/dock/desktop/panel
-	
+
 
 	--Colours
 
 	default_color = '#000000',  				-- default color and border color
-	color1 = '#718590', 
-	color2 = '#FF6500', 
-	color3 = '#888888', 
+	color1 = '#718590',
+	color2 = '#FF6500',
+	color3 = '#888888',
 	color4 = '#BDBDBD',
-	color5 = '#CCCCCC', 
+	color5 = '#CCCCCC',
 	color6 = '#FFFFFF',
 
 	--Signal Colours
