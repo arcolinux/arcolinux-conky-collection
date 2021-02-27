@@ -1,0 +1,92 @@
+conky.config = {
+
+background = true,
+update_interval = 1,
+
+cpu_avg_samples = 2,
+net_avg_samples = 2,
+temperature_unit = 'celsius',
+
+double_buffer = true,
+no_buffers = true,
+text_buffer_size = 2048,
+
+gap_x = 15,
+gap_y = 100,
+minimum_width = 250, minimum_height = 450,
+maximum_width = 250,
+own_window = true,
+--## me change, added next 2 lines
+--## own_window_type override
+own_window_type = 'normal', 			-- if own_window true options are: normal/override/dock/desktop/panel
+own_window_argb_visual = true,
+own_window_transparent = true,
+own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
+own_window_argb_value = 0,
+own_window_colour = '000000',
+border_inner_margin = 0,
+border_outer_margin = 0,
+alignment = 'top_right',
+
+draw_shades = false,
+draw_outline = false,
+draw_borders = false,
+draw_graph_borders = false,
+
+
+
+override_utf8_locale = true,
+use_xft = true,
+font = 'Open Sanslight:size=8',
+xftalpha = 1.0,
+uppercase = yes,
+
+default_color = 'FFFFFF',
+color1 = 'FFFFFF',
+color2 = 'FFFFFF',
+color3 = 'FFFFFF',
+color4 = 'FFFFFF',
+
+lua_load = '~/.config/conky/lua/conky_redux.lua',
+lua_draw_hook_post = 'main',
+lua_draw_hook_pre = 'background'};
+
+conky.text = [[
+${color1}${font opensans:bold:size=22}${alignc}${color}${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4" " $5'}}
+${voffset 0}
+${goto 0}${alignc}${color4}${font opensans:bold:size=22}${voffset -5}${time %e}${font Open Sans:bold:size=18}
+${goto 0}${alignc}${color2}${voffset -20}${font Open Sans:bold:size=9}${time %b}
+${goto 0}${alignc}${color1}${font Open Sans:bold:size=10}${time %a}
+
+${voffset 15}
+${goto 50}${font Open Sans:bold:size=13}System Info
+${goto 50}${color1}${font Open Sans:bold:size=9}Kernel ${alignr 50}${font Open Sans:normal:size=9}${color1}${kernel}
+${goto 50}${color1}${font Open Sans:bold:size=9}Uptime ${alignr 50}${font Open Sans:normal:size=9}${color1}${uptime}
+${goto 50}${color1}${font Open Sans:bold:size=9}Cpu Temp ${alignr 50}${font Open Sans:normal:size=9}${color1}${execi 10 sensors | grep 'Core 0' | awk {'print $3'}}
+
+
+${voffset 15}
+${goto 50}${font Open Sans:bold:size=13}${color}CPU
+${goto 50}${font Open Sans:normal:size=9}${color}Processes ${font Open Sans:normal:size=9}${alignr}${offset -50}$processes
+${goto 50}${font Open Sans:normal:size=9}${color1}${top name 1}${alignr}${offset -50}${top cpu 1}%
+${goto 50}${font Open Sans:normal:size=9}${color1}${top name 2}${alignr}${offset -50}${top cpu 2}%
+${goto 50}${font Open Sans:normal:size=9}${color1}${top name 3}${alignr}${offset -50}${top cpu 3}%
+
+${voffset 15}
+${goto 50}${font Open Sans:bold:size=13}${color}Memory
+${goto 50}${font Open Sans:normal:size=9}${color1}${top_mem name 1}${alignr}${offset -50}${font Open Sans:normal:size=9}${top_mem mem 1}%
+${goto 50}${font Open Sans:normal:size=9}${color1}${top_mem name 2}${alignr}${offset -50}${font Open Sans:normal:size=9}${top_mem mem 2}%
+${goto 50}${font Open Sans:normal:size=9}${color1}${top_mem name 3}${alignr}${offset -50}${font Open Sans:normal:size=9}${top_mem mem 3}%
+
+${voffset 15}
+${goto 50}${font Open Sans:bold:size=13}${color}Storage
+${goto 50}${font Open Sans:bold:size=9}${color1}/${alignr}${offset -50}${font Open Sans:normal:size=9}${fs_used /} / ${fs_size /}
+${voffset 0}
+${goto 50}${font Open Sans:bold:size=13}${color1}NET${alignr}${offset -50}${color1}
+#${goto 50}${font Open Sans:bold:size=9}${color1}Internal IP${alignr 50}${font Open Sans:normal:size=9}${if_up enp0s31f6}${addr enp0s31f6}${endif}${if_up wlan0}${addr wlan0}${endif}
+${goto 50}${font Open Sans:bold:size=9}${color1}Uplink ${alignr 50}${color}${font Open Sans:normal:size=9}${upspeed enp0s31f6}
+${goto 50}${font Open Sans:bold:size=9}${color1}Downlink ${alignr 50}${color}${font Open Sans:normal:size=9}${downspeed enp0s31f6}
+
+]];
+
+
