@@ -147,7 +147,7 @@ gauge = {
     hand_fg_colour=0xEF5A29,       hand_fg_alpha=0.0,
     txt_radius=34,
     txt_weight=0,                  txt_size=8.0,
-    txt_fg_colour=0xFFFFFF,        txt_fg_alpha=0.5,
+    txt_fg_colour=0xFFFFFF,        txt_fg_alpha=1,
     graduation_radius=24,
     graduation_thickness=5,        graduation_mark_thickness=1,
     graduation_unit_angle=27,
