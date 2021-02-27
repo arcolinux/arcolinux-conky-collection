@@ -124,7 +124,7 @@ gauge = {
     graph_bg_colour=0xffffff,      graph_bg_alpha=0.1,
     graph_fg_colour=0xFFFFFF,      graph_fg_alpha=1,
     hand_fg_colour=0xEF5A29,       hand_fg_alpha=0.0,
-    txt_radius=10,
+    txt_radius=34,
     txt_weight=0,                  txt_size=8.0,
     txt_fg_colour=0xFFFFFF,        txt_fg_alpha=1,
     graduation_radius=24,
