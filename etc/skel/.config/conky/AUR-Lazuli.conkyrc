@@ -168,10 +168,11 @@ ${color1}${font ubuntu:size=11:regular}Upload speed: ${font}${color6}${upspeed e
 # netw graphs
 ${voffset 5}${color6}${downspeedgraph enp0s31f6 35,135 ffffff ffffff 17000 -l} $alignr${upspeedgraph enp0s31f6 35,135 ffffff ffffff 3000 -l}
 #
-${voffset -5}${color1}${goto 75}${font ubuntu:size=11:regular}Received ${alignr 5}Sent
-${color1}${font ubuntu:size=11:regular}Session:${font}${color6}${goto 75}${totaldown enp0s31f6} ${alignr 5}${totalup enp0s31f6}
-${color1}${font ubuntu:size=11:regular}Today:${font}${color6}${goto 75}${execi 60 vnstat -i enp0s31f6 | grep "today" | awk '{print $2 $3}'}${alignr 5}${execi 60 vnstat -i enp0s31f6 | grep "today" | awk '{print $5 $6}'}
-${color1}${font ubuntu:size=11:regular}Month:${font}${color6}${goto 75}${execi 60 vnstat -i enp0s31f6 -m | grep "`date +"%Y-%m"`" | awk '{print $2 $3}'}${alignr 5}${execi 60 vnstat -i enp0s31f6 -m | grep "`date +"%Y-%m"`" | awk '{print $5 $6}'}
+${voffset -5}${color1}${goto 90}${font ubuntu:size=11:regular}Received ${alignr 5}Sent
+${color1}${font ubuntu:size=11:regular}Session:${font}${color6}${goto 90}${totaldown enp0s31f6} ${alignr 5}${totalup enp0s31f6}
+${color1}${font ubuntu:size=11:regular}Yesterday:${font}${color6}${goto 90}${execi 60 vnstat -i enp0s31f6 | grep "yesterday" | awk '{print $2 $3}'}${alignr 5}${execi 60 vnstat -i enp0s31f6 | grep "yesterday" | awk '{print $5 $6}'}
+${color1}${font ubuntu:size=11:regular}Today:${font}${color6}${goto 90}${execi 60 vnstat -i enp0s31f6 | grep "today" | awk '{print $2 $3}'}${alignr 5}${execi 60 vnstat -i enp0s31f6 | grep "today" | awk '{print $5 $6}'}
+${color1}${font ubuntu:size=11:regular}Month:${font}${color6}${goto 90}${execi 60 vnstat -i enp0s31f6 -m | grep "`date +"%Y-%m"`" | awk '{print $2 $3}'}${alignr 5}${execi 60 vnstat -i enp0s31f6 -m | grep "`date +"%Y-%m"`" | awk '{print $5 $6}'}
 #
 #
 # Processes
