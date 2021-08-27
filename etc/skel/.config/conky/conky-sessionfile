@@ -1,1 +1,1 @@
-conky -c /home/erik/.config/conky/Arco-Redux-LUA.conkyrc & sleep 1s
+conky -c ~/.config/conky/Arco-Redux-LUA.conkyrc & sleep 1s
