@@ -67,7 +67,7 @@ minimum_width = 240,
 minimum_height = 240,
 maximum_width = 240,
 
-gap_x = 10,--## left | right
+gap_x = 25,--## left | right
 gap_y = 60,--## up | down
 
 alignment = 'top_left',
